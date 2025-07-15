@@ -24,6 +24,7 @@ set_option -force_gsr false
 set_option -compiler_compatible 0
 set_option -dup false
 
+add_file -constraint {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/constraints.fdc}
 set_option -default_enum_encoding default
 
 #simulation options
@@ -45,16 +46,16 @@ set_option -resolve_multiple_driver 0
 set_option -seqshift_no_replicate 0
 
 #-- add_file options
-set_option -include_path {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing}
-add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_adc/adc.v}
-add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_ddr3/ddr3.v}
-add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_rgmii/rgmii.v}
-add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_ulpi/ulpi.v}
-add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.v}
+set_option -include_path {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing}
+add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_adc/adc.v}
+add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_ddr3/ddr3.v}
+add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_rgmii/rgmii.v}
+add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_ulpi/ulpi.v}
+add_file -verilog -vlog_std v2001 {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing.v}
 
 
 #-- set result format/file last
-project -result_file {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing/clk_routing_clk_routing.edi}
+project -result_file {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/clk_routing_clk_routing.edi}
 
 #-- error message log file
 project -log_file {clk_routing_clk_routing.srf}

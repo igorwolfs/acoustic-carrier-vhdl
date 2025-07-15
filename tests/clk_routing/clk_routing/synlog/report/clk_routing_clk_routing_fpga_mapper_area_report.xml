@@ -5,11 +5,11 @@ The file contains the area information from mapper to be displayed as part of th
 *******************************************************************************************-->
 <report_table display_priority="1" name="Area Summary">
 <report_link name="Detailed report">
-<data>/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing/synlog/report/clk_routing_clk_routing_fpga_mapper_resourceusage.rpt</data>
+<data>/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/synlog/report/clk_routing_clk_routing_fpga_mapper_resourceusage.rpt</data>
 <title>Resource Usage</title>
 </report_link>
 <parameter tooltip="Total Register bits used" name="Register bits">
-<data>33</data>
+<data>30</data>
 </parameter>
 <parameter tooltip="Total I/O cells used" name="I/O cells">
 <data>75</data>

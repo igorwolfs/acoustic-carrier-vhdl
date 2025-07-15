@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------
 Report for cell clk_routing.verilog
 
-Register bits: 33 of 24288 (0%)
+Register bits: 30 of 24288 (0%)
 PIC Latch:       0
 I/O cells:       75
                                           Cell usage:
@@ -10,12 +10,12 @@ I/O cells:       75
                               CCU2C       10       100.0
                             EHXPLLL        2       100.0
                             FD1S3AX        8       100.0
-                            FD1S3DX       10       100.0
+                            FD1S3DX        7       100.0
                             FD1S3IX        8       100.0
                                 GSR        1       100.0
                                  IB       11       100.0
                             IDDRX1F        5       100.0
-                                INV       13       100.0
+                                INV       12       100.0
                                  OB       35       100.0
                                 OBZ        9       100.0
                             ODDRX1F       52       100.0
@@ -30,13 +30,13 @@ SUB MODULES
                               rgmii        1       100.0
                                ulpi        1       100.0
                             
-                         TOTAL           208           
+                         TOTAL           204           
 ----------------------------------------------------------------------
 Report for cell ulpi.netlist
      Instance path:  u_ulpi
                                           Cell usage:
                                cell       count    Res Usage(%)
-                            FD1S3DX        1        10.0
+                            FD1S3DX        1        14.3
                            ORCALUT4        2       100.0
                                 VHI        1        20.0
                                 VLO        1        20.0
@@ -48,7 +48,7 @@ Report for cell rgmii.netlist
                                           Cell usage:
                                cell       count    Res Usage(%)
                             IDDRX1F        5       100.0
-                                INV        1         7.7
+                                INV        1         8.3
                             ODDRX1F        6        11.5
                                 VHI        1        20.0
                                 VLO        1        20.0
@@ -63,7 +63,7 @@ Report for cell lpddr3.netlist
                               CCU2C        5        50.0
                             EHXPLLL        1        50.0
                             FD1S3AX        8       100.0
-                                INV        8        61.5
+                                INV        8        66.7
                             ODDRX1F       46        88.5
                                 VHI        1        20.0
                                 VLO        1        20.0

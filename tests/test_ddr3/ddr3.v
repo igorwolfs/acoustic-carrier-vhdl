@@ -52,8 +52,7 @@ module lpddr3 (
     // This example generates a 400 MHz clock from a 50 MHz input.
     // You MUST adjust these parameters to match your system clock and target speed.
     (* FREQUENCY_PIN_CLKI="100.0" *)
-    (* FREQUENCY_PIN_CLKOP="400.0" *)
-    (* FEEDBACK_PATH="CLKOP" *)
+    (* FREQUENCY_PIN_CLKOP="350.0" *)
     (* CLKOP_ENABLE="ENABLED" *)
     (* CLKOS_ENABLE="ENABLED" *) // Enable the secondary differential output
 	EHXPLLL #(

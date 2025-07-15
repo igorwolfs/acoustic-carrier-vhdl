@@ -1,5 +1,5 @@
 <html><body><samp><pre>
-<!@TC:1751820798>
+<!@TC:1751925659>
 
 Copyright (C) 1994-2023 Synopsys, Inc.
 This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
@@ -18,19 +18,19 @@ max stack size: 8388608 (bytes)
 
 Implementation : clk_routing
 
-# Written on Sun Jul  6 18:53:20 2025
+# Written on Tue Jul  8 00:01:03 2025
 
 ##### DESIGN INFO #######################################################
 
 Top View:                "clk_routing"
-Constraint File(s):      (none)
+Constraint File(s):      "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/constraints.fdc"
 
 
 
 
 ##### SUMMARY ############################################################
 
-Found 0 issues in 0 out of 0 constraints
+Found 0 issues in 0 out of 3 constraints
 
 
 ##### DETAILS ############################################################
@@ -44,11 +44,9 @@ Starting                              Ending                                |   
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                System                                |     5.000            |     No paths         |     No paths         |     No paths                         
 System                                lpddr3|pll_clk_out_inferred_clock     |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|ULPI_CLK                  clk_routing|ULPI_CLK                  |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|CLK_100MHZ                System                                |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|CLK_100MHZ                clk_routing|CLK_100MHZ                |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|ETH_REFCLK                System                                |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|ETH_REFCLK                clk_routing|ETH_REFCLK                |     5.000            |     No paths         |     No paths         |     No paths                         
+ulpi_clk                              ulpi_clk                              |     16.667           |     No paths         |     No paths         |     No paths                         
+eth_refclk                            System                                |     8.000            |     No paths         |     No paths         |     No paths                         
+eth_refclk                            eth_refclk                            |     8.000            |     No paths         |     No paths         |     No paths                         
 lpddr3|pll_clk_out_inferred_clock     System                                |     5.000            |     No paths         |     No paths         |     No paths                         
 lpddr3|pll_clk_out_inferred_clock     lpddr3|pll_clk_out_inferred_clock     |     5.000            |     No paths         |     No paths         |     No paths                         
 =======================================================================================================================================================================================
@@ -56,7 +54,7 @@ lpddr3|pll_clk_out_inferred_clock     lpddr3|pll_clk_out_inferred_clock     |   
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
 
-<a name=UnconstrainedStartEndPointsCCK49></a>Unconstrained Start/End Points</a>
+<a name=UnconstrainedStartEndPointsCCK45></a>Unconstrained Start/End Points</a>
 ******************************
 
 p:ADC_CLK
@@ -176,25 +174,25 @@ p:ULPI_RST
 p:ULPI_STP
 
 
-<a name=InapplicableconstraintsCCK50></a>Inapplicable constraints</a>
+<a name=InapplicableconstraintsCCK46></a>Inapplicable constraints</a>
 ************************
 
 (none)
 
 
-<a name=ApplicableConstraintsWithIssuesCCK51></a>Applicable constraints with issues</a>
+<a name=ApplicableConstraintsWithIssuesCCK47></a>Applicable constraints with issues</a>
 **********************************
 
 (none)
 
 
-<a name=ConstraintsWithMatchingWildcardExpressionsCCK52></a>Constraints with matching wildcard expressions</a>
+<a name=ConstraintsWithMatchingWildcardExpressionsCCK48></a>Constraints with matching wildcard expressions</a>
 **********************************************
 
 (none)
 
 
-<a name=LibraryReportCCK53></a>Library Report</a>
+<a name=LibraryReportCCK49></a>Library Report</a>
 **************
 
 

@@ -36,7 +36,6 @@ module adc (
     // 35MHz = 50MHz * (7 / 10) / 1
     (* FREQUENCY_PIN_CLKI="100.0" *)
     (* FREQUENCY_PIN_CLKOP="35.0" *)
-    (* FEEDBACK_PATH="CLKOP" *)
     (* CLKOP_ENABLE="ENABLED" *)
 
     // EHXPLLL #(

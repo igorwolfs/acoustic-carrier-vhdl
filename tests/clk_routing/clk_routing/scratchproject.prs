@@ -1,25 +1,26 @@
 #--  Synopsys, Inc.
 #--  Version V-2023.09L-2
-#--  Project file /home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing/scratchproject.prs
+#--  Project file /home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/scratchproject.prs
 
 #project files
-add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_adc/adc.v"
-add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_ddr3/ddr3.v"
-add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_rgmii/rgmii.v"
-add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/test_ulpi/ulpi.v"
-add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.v"
+add_file -fpga_constraint "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/constraints.fdc"
+add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_adc/adc.v"
+add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_ddr3/ddr3.v"
+add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_rgmii/rgmii.v"
+add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/test_ulpi/ulpi.v"
+add_file -verilog -vlog_std v2001 "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing.v"
 
 
 #implementation: "clk_routing"
-impl -add /home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing -type fpga
+impl -add /home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing -type fpga
 
 #
 #implementation attributes
 
 set_option -vlog_std v2001
 set_option -project_relative_includes 1
-set_option -include_path {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing/}
-set_option -include_path {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing}
+set_option -include_path {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/}
+set_option -include_path {/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing}
 
 #device options
 set_option -technology ECP5U
@@ -87,8 +88,8 @@ set_option -auto_infer_blackbox 0
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing/clk_routing_clk_routing.edi"
+project -result_file "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/clk_routing_clk_routing.edi"
 
 #set log file 
-set_option log_file "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing/clk_routing_clk_routing.srf" 
+set_option log_file "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/clk_routing_clk_routing.srf" 
 impl -active "clk_routing"

@@ -1,0 +1,12 @@
+#Start recording tcl command: 7/7/2025 23:43:41
+#Project Location: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing; Project name: clk_routing
+prj_project open "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing.ldf"
+prj_run Synthesis -impl clk_routing
+prj_run Map -impl clk_routing
+prj_run Map -impl clk_routing
+prj_run Synthesis -impl clk_routing
+prj_run Map -impl clk_routing
+prj_run Synthesis -impl clk_routing
+prj_run Map -impl clk_routing
+prj_run Synthesis -impl clk_routing
+#Stop recording: 7/8/2025 10:02:57

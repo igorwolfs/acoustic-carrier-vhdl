@@ -16,19 +16,19 @@ max stack size: 8388608 (bytes)
 
 Implementation : clk_routing
 
-# Written on Sun Jul  6 18:53:20 2025
+# Written on Tue Jul  8 00:01:03 2025
 
 ##### DESIGN INFO #######################################################
 
 Top View:                "clk_routing"
-Constraint File(s):      (none)
+Constraint File(s):      "/home/iwolfs/Work/Projects/electromechanical/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/constraints.fdc"
 
 
 
 
 ##### SUMMARY ############################################################
 
-Found 0 issues in 0 out of 0 constraints
+Found 0 issues in 0 out of 3 constraints
 
 
 ##### DETAILS ############################################################
@@ -42,11 +42,9 @@ Starting                              Ending                                |   
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 System                                System                                |     5.000            |     No paths         |     No paths         |     No paths                         
 System                                lpddr3|pll_clk_out_inferred_clock     |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|ULPI_CLK                  clk_routing|ULPI_CLK                  |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|CLK_100MHZ                System                                |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|CLK_100MHZ                clk_routing|CLK_100MHZ                |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|ETH_REFCLK                System                                |     5.000            |     No paths         |     No paths         |     No paths                         
-clk_routing|ETH_REFCLK                clk_routing|ETH_REFCLK                |     5.000            |     No paths         |     No paths         |     No paths                         
+ulpi_clk                              ulpi_clk                              |     16.667           |     No paths         |     No paths         |     No paths                         
+eth_refclk                            System                                |     8.000            |     No paths         |     No paths         |     No paths                         
+eth_refclk                            eth_refclk                            |     8.000            |     No paths         |     No paths         |     No paths                         
 lpddr3|pll_clk_out_inferred_clock     System                                |     5.000            |     No paths         |     No paths         |     No paths                         
 lpddr3|pll_clk_out_inferred_clock     lpddr3|pll_clk_out_inferred_clock     |     5.000            |     No paths         |     No paths         |     No paths                         
 =======================================================================================================================================================================================

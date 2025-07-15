@@ -17,29 +17,29 @@ Command line:   map -a ECP5U -p LFE5U-25F -t CABGA256 -s 6 -oc Commercial
      clk_routing_clk_routing.ngd -o clk_routing_clk_routing_map.ncd -pr
      clk_routing_clk_routing.prf -mp clk_routing_clk_routing.mrp -lpf /home/iwol
      fs/Work/Projects/electromechanical/acoustic-material-characterization/acous
-     tic-carrier-hw/VHDL/tests/clk_routing/clk_routing/clk_routing_clk_routing_s
-     ynplify.lpf -lpf /home/iwolfs/Work/Projects/electromechanical/acoustic-mate
-     rial-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routin
-     g.lpf -gui -msgset /home/iwolfs/Work/Projects/electromechanical/acoustic-ma
-     terial-characterization/acoustic-carrier-hw/VHDL/tests/clk_routing/promote.
-     xml 
+     tic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/clk_routing/clk_rout
+     ing_clk_routing_synplify.lpf -lpf /home/iwolfs/Work/Projects/electromechani
+     cal/acoustic-material-characterization/acoustic-carrier-hw/acoustic-carrier
+     -vhdl/tests/clk_routing/clk_routing.lpf -gui -msgset /home/iwolfs/Work/Proj
+     ects/electromechanical/acoustic-material-characterization/acoustic-carrier-
+     hw/acoustic-carrier-vhdl/tests/clk_routing/promote.xml 
 Target Vendor:  LATTICE
 Target Device:  LFE5U-25FCABGA256
 Target Performance:   6
 Mapper:  sa5p00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  07/06/25  18:53:21
+Mapped on:  07/07/25  23:51:54
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:     33 out of 24879 (0%)
-      PFU registers:           26 out of 24288 (0%)
+   Number of registers:     30 out of 24879 (0%)
+      PFU registers:           23 out of 24288 (0%)
       PIO registers:            7 out of   591 (1%)
-   Number of SLICEs:        29 out of 12144 (0%)
-      SLICEs as Logic/ROM:     29 out of 12144 (0%)
+   Number of SLICEs:        28 out of 12144 (0%)
+      SLICEs as Logic/ROM:     28 out of 12144 (0%)
       SLICEs as RAM:            0 out of  9108 (0%)
       SLICEs as Carry:         10 out of 12144 (0%)
-   Number of LUT4s:         37 out of 24288 (0%)
-      Number used as logic LUTs:         17
+   Number of LUT4s:         36 out of 24288 (0%)
+      Number used as logic LUTs:         16
       Number used as distributed RAM:     0
       Number used as ripple logic:       20
       Number used as shift registers:     0
@@ -95,21 +95,19 @@ Mapped on:  07/06/25  18:53:21
    Number of Used DSP ALU Sites:  0 out of 28 (0 %)
    Number of Used DSP PRADD Sites:  0 out of 56 (0 %)
    Number of clocks:  4
-     Net CLK_100MHZ_c: 4 loads, 4 rising, 0 falling (Driver: PIO CLK_100MHZ )
+     Net CLK_100MHZ_c: 2 loads, 2 rising, 0 falling (Driver: PIO CLK_100MHZ )
      Net ULPI_CLK_c: 15 loads, 15 rising, 0 falling (Driver: PIO ULPI_CLK )
-     Net ETH_REFCLK_c: 7 loads, 7 rising, 0 falling (Driver: PIO ETH_REFCLK )
+     Net ETH_REFCLK_c: 13 loads, 13 rising, 0 falling (Driver: PIO ETH_REFCLK )
      Net u_lpddr3/pll_clk_out: 52 loads, 52 rising, 0 falling (Driver:
      u_lpddr3/pll_inst )
    Number of Clock Enables:  1
      Net u_ulpi.data_out_reg4: 7 loads, 0 LSLICEs
-   Number of local set/reset loads for net reset_sync_100mhz[2] merged into GSR:
-     46
-   Number of LSRs:  5
-     Net ULPI_RST_c: 8 loads, 1 LSLICEs
+   Number of local set/reset loads for net u_lpddr3/VCC merged into GSR:  46
+   Number of LSRs:  4
      Net reset_sync_rgmii[2]: 11 loads, 0 LSLICEs
-     Net reset_sync_100mhz_i[2]: 2 loads, 0 LSLICEs
+     Net ULPI_RST_c: 8 loads, 1 LSLICEs
      Net reset_sync_ulpi[2]: 5 loads, 5 LSLICEs
-     Net RESET_N_c: 6 loads, 6 LSLICEs
+     Net RESET_N_c: 4 loads, 4 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
      Net u_lpddr3/toggle_counter[1]: 12 loads
@@ -128,7 +126,9 @@ Mapped on:  07/06/25  18:53:21
 
 
 
-   Number of warnings:  35
+
+
+   Number of warnings:  32
    Number of errors:    0
      
 
@@ -137,87 +137,86 @@ Mapped on:  07/06/25  18:53:21
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
 
-WARNING - map: Pref conflicts. Ignoring FREQUENCY PORT "CLK_100MHZ" 100.000000
-     MHz ;
-        Keeping FREQUENCY PORT "CLK_100MHZ" 100.000000 MHz ;
-     .
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(1
-     3): Semantic error in "LOCATE COMP "FPGA_RESET" SITE "R9" ;": COMP
-     "FPGA_RESET" cannot be found in design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(21): Semantic error in "IOBUF PORT "ADC_DTR"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_DTR" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(1
-     4): Semantic error in "IOBUF PORT "FPGA_RESET" IO_TYPE=LVCMOS33 PULLMODE=UP
-     ;": Port "FPGA_RESET" does not exist in the design. This preference has
-     been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(25): Semantic error in "IOBUF PORT "ADC_D[0]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[0]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(2
-     6): Semantic error in "IOBUF PORT "ADC_DTR" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_DTR" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(27): Semantic error in "IOBUF PORT "ADC_D[1]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[1]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(3
-     0): Semantic error in "IOBUF PORT "ADC_D[0]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[0]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(29): Semantic error in "IOBUF PORT "ADC_D[2]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[2]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(3
-     2): Semantic error in "IOBUF PORT "ADC_D[1]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[1]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(31): Semantic error in "IOBUF PORT "ADC_D[3]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[3]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(3
-     4): Semantic error in "IOBUF PORT "ADC_D[2]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[2]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(33): Semantic error in "IOBUF PORT "ADC_D[4]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[4]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(3
-     6): Semantic error in "IOBUF PORT "ADC_D[3]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[3]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(35): Semantic error in "IOBUF PORT "ADC_D[5]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[5]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(3
-     8): Semantic error in "IOBUF PORT "ADC_D[4]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[4]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(37): Semantic error in "IOBUF PORT "ADC_D[6]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[6]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(4
-     0): Semantic error in "IOBUF PORT "ADC_D[5]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[5]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(39): Semantic error in "IOBUF PORT "ADC_D[7]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[7]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(4
-     2): Semantic error in "IOBUF PORT "ADC_D[6]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[6]" does not exist in the design. This preference has been disabled.
-WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(4
-     4): Semantic error in "IOBUF PORT "ADC_D[7]" IO_TYPE=LVCMOS33 ;": Port
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(41): Semantic error in "IOBUF PORT "ADC_D[8]"
 
-     "ADC_D[7]" does not exist in the design. This preference has been disabled.
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[8]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(4
-     6): Semantic error in "IOBUF PORT "ADC_D[8]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[8]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(43): Semantic error in "IOBUF PORT "ADC_D[9]"
+     IO_TYPE=LVCMOS33 ;": Port "ADC_D[9]" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(4
-     8): Semantic error in "IOBUF PORT "ADC_D[9]" IO_TYPE=LVCMOS33 ;": Port
-     "ADC_D[9]" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(180): Semantic error in "IOBUF PORT "RGMII_RX_CLK"
+     IO_TYPE=LVCMOS33 ;": Port "RGMII_RX_CLK" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(1
-     80): Semantic error in "IOBUF PORT "RGMII_RX_CLK" IO_TYPE=LVCMOS33 ;": Port
-     "RGMII_RX_CLK" does not exist in the design. This preference has been
-     disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(208): Semantic error in "IOBUF PORT "MDIO_CLK"
+     IO_TYPE=LVCMOS33 ;": Port "MDIO_CLK" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(2
-     08): Semantic error in "IOBUF PORT "MDIO_CLK" IO_TYPE=LVCMOS33 ;": Port
-     "MDIO_CLK" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(210): Semantic error in "IOBUF PORT "MDIO_DATA"
+     IO_TYPE=LVCMOS33 ;": Port "MDIO_DATA" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(2
-     10): Semantic error in "IOBUF PORT "MDIO_DATA" IO_TYPE=LVCMOS33 ;": Port
-     "MDIO_DATA" does not exist in the design. This preference has been
-     disabled.
-WARNING - map: /home/iwolfs/Work/Projects/electromechanical/acoustic-material-ch
-     aracterization/acoustic-carrier-hw/VHDL/tests/clk_routing/clk_routing.lpf(2
-     46): Semantic error in "IOBUF PORT "ULPI_NXT" IO_TYPE=LVCMOS33 ;": Port
-     "ULPI_NXT" does not exist in the design. This preference has been disabled.
+     aracterization/acoustic-carrier-hw/acoustic-carrier-vhdl/tests/clk_routing/
+     clk_routing.lpf(246): Semantic error in "IOBUF PORT "ULPI_NXT"
+     IO_TYPE=LVCMOS33 ;": Port "ULPI_NXT" does not exist in the design. This
+     preference has been disabled.
 WARNING - map: EHXPLLL 'u_lpddr3/pll_inst' cannot obtain
      FREQUENCY_PIN_CLKOP=400.000 when FREQUENCY_PIN_CLKI=100.000, CLKI_DIV=1,
      CLKFB_DIV=3, CLKOP_DIV=1.
-WARNING - map: Using local reset signal 'reset_sync_100mhz[2]' to infer global
-     GSR net.
+WARNING - map: Using local reset signal 'u_lpddr3/VCC' to infer global GSR net.
 WARNING - map: IO buffer missing for top level port ADC_DTR...logic will be
      discarded.
 WARNING - map: IO buffer missing for top level port ADC_D[9:0](9)...logic will
@@ -242,8 +241,8 @@ WARNING - map: IO buffer missing for top level port ADC_D[9:0](0)...logic will
      be discarded.
 WARNING - map: IO buffer missing for top level port RGMII_RX_CLK...logic will be
      discarded.
-
 WARNING - map: IO buffer missing for top level port MDIO_CLK...logic will be
+
      discarded.
 WARNING - map: IO buffer missing for top level port MDIO_DATA...logic will be
      discarded.
@@ -300,8 +299,8 @@ WARNING - map: IO buffer missing for top level port ULPI_NXT...logic will be
 +---------------------+-----------+-----------+------------+
 | LPDDR_DQS_P[0]      | BIDIR     | SSTL135D_I|            |
 +---------------------+-----------+-----------+------------+
-
 | LPDDR_DQS_P[1]      | BIDIR     | SSTL135D_I|            |
+
 +---------------------+-----------+-----------+------------+
 | LPDDR_DQS_N[1]      | BIDIR     | SSTL135D_I|            |
 +---------------------+-----------+-----------+------------+
@@ -357,8 +356,8 @@ WARNING - map: IO buffer missing for top level port ULPI_NXT...logic will be
 +---------------------+-----------+-----------+------------+
 | LPDDR_DM[0]         | OUTPUT    | SSTL135_I |            |
 +---------------------+-----------+-----------+------------+
-
 | LPDDR_A[15]         | OUTPUT    | SSTL135_I |            |
+
 +---------------------+-----------+-----------+------------+
 | LPDDR_A[14]         | OUTPUT    | SSTL135_I |            |
 +---------------------+-----------+-----------+------------+
@@ -408,28 +407,24 @@ WARNING - map: IO buffer missing for top level port ULPI_NXT...logic will be
 +---------------------+-----------+-----------+------------+
 | LPDDR_CLK_N         | OUTPUT    | SSTL135D_I|            |
 +---------------------+-----------+-----------+------------+
-| RESET_N             | INPUT     | LVCMOS25  |            |
+| RESET_N             | INPUT     | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-
-
-
-
 
 
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
-Block u_adc/VCC undriven or does not drive anything - clipped.
 Block u_ulpi/GND undriven or does not drive anything - clipped.
+
 Block u_ulpi/VCC undriven or does not drive anything - clipped.
 Signal reset_sync_ulpi_i[2] was merged into signal reset_sync_ulpi[2]
 Signal RESET_N_c_i was merged into signal RESET_N_c
 Signal u_rgmii/rst_sync was merged into signal reset_sync_rgmii[2]
 Signal GND undriven or does not drive anything - clipped.
 Signal VCC undriven or does not drive anything - clipped.
-Signal u_lpddr3/VCC undriven or does not drive anything - clipped.
-Signal u_rgmii/VCC undriven or does not drive anything - clipped.
+Signal u_adc/VCC undriven or does not drive anything - clipped.
 Signal u_rgmii/GND undriven or does not drive anything - clipped.
+Signal u_rgmii/VCC undriven or does not drive anything - clipped.
 Signal un2_ulpi_counter_cry_0_0_S1 undriven or does not drive anything -
      clipped.
 Signal un2_ulpi_counter_cry_0_0_S0 undriven or does not drive anything -
@@ -474,10 +469,10 @@ Signal u_lpddr3/toggle_counter_s_0_COUT[7] undriven or does not drive anything -
 Signal u_lpddr3/toggle_counter_cry_0_S0[0] undriven or does not drive anything -
      clipped.
 Signal u_lpddr3/N_1 undriven or does not drive anything - clipped.
-
 Signal u_lpddr3/un1_u_bb_dqs_n_1 undriven or does not drive anything - clipped.
 Signal u_rgmii/Q1 undriven or does not drive anything - clipped.
 Signal un2_ulpi_counter_s_7_0_S1 undriven or does not drive anything - clipped.
+
 Signal un2_ulpi_counter_s_7_0_COUT undriven or does not drive anything -
      clipped.
 Block reset_sync_ulpi_RNI2EFN6[2] was optimized away.
@@ -485,9 +480,9 @@ Block RESET_N_pad_RNI43B31 was optimized away.
 Block u_rgmii/gen_oddr_tx[3].oddrx1f_tx_data_kb_RNO was optimized away.
 Block GND was optimized away.
 Block VCC was optimized away.
-Block u_lpddr3/VCC was optimized away.
-Block u_rgmii/VCC was optimized away.
+Block u_adc/VCC was optimized away.
 Block u_rgmii/GND was optimized away.
+Block u_rgmii/VCC was optimized away.
 
      
 
@@ -507,7 +502,7 @@ PLL 1:                                     Pin/Node Value
   Output Clock(S2):                                 NONE
   Output Clock(S3):                                 NONE
   Feedback Signal:                         NODE     u_lpddr3/pll_clk_out
-  Reset Signal:                            NODE     reset_sync_100mhz_i[2]
+  Reset Signal:                                     NONE
   Standby Signal:                          NODE     u_lpddr3/GND
   PLL LOCK signal:                         NODE     u_lpddr3/pll_locked
   PLL Internal LOCK Signal:                         NONE
@@ -533,10 +528,10 @@ PLL 1:                                     Pin/Node Value
   CLKOS3 Divider:                                   8
   Fractional N Divider:                             NONE
   CLKOP Desired Phase Shift(degree):                0
-
   CLKOP Trim Option Rising/Falling:                 RISING
   CLKOP Trim Option Delay:                          0
   CLKOS Desired Phase Shift(degree):                -315
+
   CLKOS Trim Option Rising/Falling:                 RISING
   CLKOS Trim Option Delay:                          0
   CLKOS2 Desired Phase Shift(degree):               -315
@@ -556,7 +551,7 @@ PLL 2:                                     Pin/Node Value
   Output Clock(S2):                                 NONE
   Output Clock(S3):                                 NONE
   Feedback Signal:                         NODE     ADC_CLK_c
-  Reset Signal:                            NODE     reset_sync_100mhz_i[2]
+  Reset Signal:                                     NONE
   Standby Signal:                          NODE     u_adc/GND
   PLL LOCK signal:                                  NONE
   PLL Internal LOCK Signal:                         NONE
@@ -590,10 +585,10 @@ PLL 2:                                     Pin/Node Value
   CLKOS2 Desired Phase Shift(degree):               -315
   CLKOS2 Trim Option Rising/Falling:                NONE
   CLKOS2 Trim Option Delay:                         NONE
-
   CLKOS3 Desired Phase Shift(degree):               -315
   CLKOS3 Trim Option Rising/Falling:                NONE
   CLKOS3 Trim Option Delay:                         NONE
+
 
 
 
@@ -611,9 +606,9 @@ Instance Name: u_adc/pll_inst
 ---------
 
 GSR Component:
-   The local reset signal 'reset_sync_100mhz[2]' of the design has been inferred
-        as Global Set Reset (GSR). The reset signal used for GSR control is
-        'reset_sync_100mhz[2]'.
+   The local reset signal 'u_lpddr3/VCC' of the design has been inferred as
+        Global Set Reset (GSR). The reset signal used for GSR control is
+        'u_lpddr3/VCC'.
         
 
      GSR Property:
@@ -627,10 +622,15 @@ GSR Component:
 <A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
 -------------------------
 
-   Total CPU Time: 0 secs  
+   Total CPU Time: 1 secs  
    Total REAL Time: 0 secs  
    Peak Memory Usage: 265 MB
         
+
+
+
+
+
 
 
 

@@ -59,12 +59,12 @@ module clk_routing (
 
     // --- Clock Buffering ---
     // Buffer the primary system clock
-    wire clk_100mhz_buf;
+    wire sysclock_buf;
     
     // For ECP5, we can use a global clock buffer if needed
     // However, the synthesis tool will automatically infer global buffers
     // for clocks that drive many loads. We'll assign directly for simplicity.
-    assign clk_100mhz_buf = CLK_100MHZ;
+    assign sysclock_buf = CLK_100MHZ;
 
     // Buffer the RGMII RX clock (125 MHz from PHY)
     wire rgmii_rx_clk_buf;
@@ -81,15 +81,21 @@ module clk_routing (
     reg [2:0] reset_sync_ulpi = 3'b000;
 
     // Reset synchronizer for 100 MHz domain
-    always @(posedge clk_100mhz_buf or negedge RESET_N) begin
+    always @(posedge sysclock_buf or negedge RESET_N) begin
         if (!RESET_N) begin
             reset_sync_100mhz <= 3'b000;
         end else begin
             reset_sync_100mhz <= {reset_sync_100mhz[1:0], 1'b1};
         end
     end
-    wire reset_n_100mhz = reset_sync_100mhz[2];
+	
+	wire synchronized_reset_n = reset_sync_100mhz[2];
+	
+	
+	// --- PLL Lock Status ---
+	wire lpddr3_pll_locked; // Get this from your LPDDR3 module
 
+	
     // Reset synchronizer for RGMII domain
     always @(posedge rgmii_rx_clk_buf or negedge RESET_N) begin
         if (!RESET_N) begin
@@ -116,10 +122,10 @@ module clk_routing (
     
     // --- ADC Interface Instantiation ---
     wire [9:0] adc_app_data;
-    wire       adc_app_data_valid;
+    wire 		adc_app_data_valid;
 
     adc u_adc (
-        .SYS_CLK(clk_100mhz_buf),
+        .SYS_CLK(sysclock_buf),
         .RESET_N(reset_n_100mhz),
         .APP_DATA(adc_app_data),
         .APP_DATA_VALID(adc_app_data_valid),
@@ -135,7 +141,7 @@ module clk_routing (
 
     // --- LPDDR3 Interface Instantiation ---
     lpddr3 u_lpddr3 (
-        .SYS_CLK(clk_100mhz_buf),
+        .SYS_CLK(sysclock_buf),
         .RESET_N(reset_n_100mhz),
         .CK_P(LPDDR_CLK_P),
         .CK_N(LPDDR_CLK_N),
@@ -180,7 +186,7 @@ module clk_routing (
         .RGMII_TX_D(RGMII_TX_D),
         .MDIO_CLK(MDIO_CLK),
         .MDIO_DATA(MDIO_DATA),
-		.ETH_REFCLK(ETH_REFCLK),
+		.ETH_REFCLK(ETH_REFCLK)
     );
 
     // --- ULPI Interface Instantiation ---

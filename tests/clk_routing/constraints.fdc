@@ -1,0 +1,5 @@
+create_clock -name "ulpi_clk" -period 16.667 -waveform {0.000 8.334} [get_ports {ULPI_CLK}]
+
+create_clock -name "eth_refclk" -period 8 -waveform {0.000 4} [get_ports {ETH_REFCLK}]
+
+create_clock -name "clk_100mhz" -period 10 -waveform {0.000 10} [get_ports {CLK_100MHZ}]

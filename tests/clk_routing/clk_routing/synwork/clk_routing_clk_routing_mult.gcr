@@ -18,10 +18,7 @@ e ckid0_2 {t:reset_sync_rgmii[2].C} dffr
 c ckid0_2 {p:ETH_REFCLK} port Unsupported/too complex instance on clock path
 i CLK_100MHZ
 m 0 0
-u 3 3
-p {p:CLK_100MHZ}{t:reset_sync_100mhz[2].C}
-e ckid0_3 {t:reset_sync_100mhz[2].C} dffr
-c ckid0_3 {p:CLK_100MHZ} port Unsupported/too complex instance on clock path
+u 0 0
 i u_lpddr3.pll_locked
 m 0 0
 u 0 0
